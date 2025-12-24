@@ -1,0 +1,5 @@
+project : TSS-Security-Auditor
+current_target : TSS-Security-Auditor
+
+targets:
+  TSS-Security-Auditor : Executable

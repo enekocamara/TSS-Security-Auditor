@@ -80,7 +80,7 @@ target_include_directories(TSS-Security-Auditor PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_link_libraries(TSS-Security-Auditor PUBLIC fltk)
+target_link_libraries(TSS-Security-Auditor PUBLIC fltk Netapi32)
 
 target_compile_definitions(TSS-Security-Auditor PRIVATE )
 

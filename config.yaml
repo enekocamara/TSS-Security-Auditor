@@ -3,7 +3,10 @@ current_target: TSS-Security-Auditor
 targets:
   TSS-Security-Auditor: Executable
 modules:
+  CLI11:
+    git_url: https://github.com/CLIUtils/CLI11
+    git_version: v2.6.1
   fltk:
     git_url: https://github.com/fltk/fltk
     git_version: release-1.4.4
-    link_name : fltk
+    link_name: fltk

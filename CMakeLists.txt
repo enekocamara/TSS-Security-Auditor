@@ -42,6 +42,7 @@ endforeach()
 
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/modules/fltk_release-1.4.4)
+add_subdirectory(${CMAKE_SOURCE_DIR}/modules/CLI11_v2.6.1)
 
 # Check if Doxygen is available
 find_package(Doxygen REQUIRED)
@@ -76,11 +77,12 @@ target_compile_definitions(TSS-Security-Auditor PRIVATE $<$<CONFIG:Debug>:DEBUG>
 target_compile_definitions(TSS-Security-Auditor PRIVATE $<$<CONFIG:Release>:RELEASE>)
 
 target_include_directories(TSS-Security-Auditor PUBLIC
+	${CMAKE_SOURCE_DIR}/modules/CLI11_v2.6.1
 	${CMAKE_SOURCE_DIR}/modules/fltk_release-1.4.4
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_link_libraries(TSS-Security-Auditor PUBLIC fltk Netapi32)
+target_link_libraries(TSS-Security-Auditor PUBLIC fltk CLI11 Netapi32)
 
 target_compile_definitions(TSS-Security-Auditor PRIVATE )
 

@@ -6,10 +6,28 @@
 #include <TSS-Security-Auditor/include/windows.hpp>
 #include <ntsecapi.h>
 #include <lm.h>
+#include <CLI/CLI.hpp>
+#include <iostream>
 #include <iostream>
 
-int main() {
+int main(int argc, char** argv) {
+
+    CLI::App app{ "My tool" };
+
+    auto hello = app.add_subcommand("hello", "Say hello");
+    auto goodbye = app.add_subcommand("goodbye", "Say goodbye");
+
+
+
+    CLI11_PARSE(app, argc, argv);
     
+    if (*hello) {
+        std::cout << "Hello!\n";
+    }
+    else if (*goodbye) {
+        std::cout << "Goodbye!\n";
+    }
+
     /*
     NET_API_STATUS NetLocalGroupGetMembers(
         LPCWSTR servername,
@@ -48,8 +66,8 @@ int main() {
     for (DWORD i = 0; i < entry_count; ++i) {
         wprintf(L"%s\n", output_bufptr[i].lgrmi2_domainandname);
     }
+    NetApiBufferFree(output_bufptr);
 
-    
     Fl_Window* win = new Fl_Window(300, 180, "Hello FLTK");
     Fl_Box* box = new Fl_Box(20, 40, 260, 100, "Hello World!");
     win->end();

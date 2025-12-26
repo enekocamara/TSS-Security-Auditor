@@ -1,3 +1,6 @@
 [submodule "modules/fltk_release-1.4.4"]
 	path = modules/fltk_release-1.4.4
 	url = https://github.com/fltk/fltk
+[submodule "modules/CLI11_v2.6.1"]
+	path = modules/CLI11_v2.6.1
+	url = https://github.com/CLIUtils/CLI11
